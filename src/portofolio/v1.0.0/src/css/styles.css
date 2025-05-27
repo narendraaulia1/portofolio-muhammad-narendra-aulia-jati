@@ -1,0 +1,976 @@
+/* Import */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap');
+
+html {
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    background-color: black;
+    overflow-x: hidden;
+}
+
+/* Navbar desktop version*/
+.navbar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    padding-right: 20px;
+    font-size: 20px;
+    position: fixed;
+    height: 90px;
+    margin: 0;
+}
+
+/* padding & border for logo */
+.logo img {
+    padding-left: 10px;
+    padding-top: 10px;
+    top: -10px;
+    /* border-radius: 50%; */
+}
+
+.navbar-menu {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.navbar-menu li {
+    display: inline;
+    margin-right: 15px;
+    padding-right: 15px;
+    text-shadow: 
+                -1px -1px 5px #000,
+                1px -1px 5px #000,
+                -1px 1px 5px #000,
+                1px 1px 5px #000;
+}
+
+.navbar-menu a {
+    text-decoration: none;
+    color: white;
+}
+
+.navbar-menu a:hover{
+    font-weight: 600;
+}
+
+/* navbar follow a scroll */
+.navbar.sticky {
+    /* background: linear-gradient(135deg rgba(255,255,255,0.1), rgba(255,255,255,0)); */
+    /* backdrop-filter: blur(25px); */
+    /* -webkit-backdrop-filter: blur(25px); */
+    background-color: #000;
+    transform: translateY(0);
+    transition: 1.5s;
+    border: 1px transparent rgba(255,255,255,0.18);
+    height: 13vh;
+}
+
+.navbar.sticky img {
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+
+/* Hamburger Menu  */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    height: 20px;
+    justify-content: space-between;
+    padding-right: 15px;
+    position: sticky;
+    width: 100%;
+    z-index: 999;
+    align-items: flex-end;
+    right: 15px;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.5s;
+    z-index: 998;
+}
+
+.menu-toggle input {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: -18px;
+    right: 0;
+    opacity: 0;
+    cursor: pointer;
+    z-index: 999;
+    align-items: flex-end;
+}
+
+/* Hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+    background-color: white;
+    transform: rotate(45deg) translate(-0.5px, -0.4px);
+}
+
+.menu-toggle input:checked ~ span:nth-child(4) {
+    background-color: white;
+    transform: rotate(-45deg) translate(-1px, 0);
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+    width: 0;
+    height: 0;
+    transform: scale(0);
+    opacity: 0;
+    transition: 0.5s;
+}
+/* end of Hamburger Animation */
+
+
+
+/* Content */
+/* spase for when navbar scroll function */
+.space {
+    padding-top: 90px;
+}
+
+
+/* Beranda/Home Page */
+.beranda {
+    background-image: linear-gradient(to bottom,#00000042,#0b0b45);
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    padding: 0;
+    width: 100vw;
+    /* opacity: 0.5; */
+}
+
+/* Memisahkan konten kanan dan kiri */
+.beranda.top-column, .beranda.bottom-column {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* kolom atas */
+.top-column {
+    /* margin-right: 40px; */
+    margin-bottom: 0;
+    width: 100vw;
+    align-items: center;
+}
+
+/* kolom atas konten beranda */
+.top-column-content {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    align-items: center;
+}
+
+.top-column-content h1 {
+    padding-top: 10px;
+    font-size: 70px;
+    font-weight: 600;
+    margin-bottom: 0;
+    text-shadow: 5px 3px 30px #dddddd81;
+    cursor: default;
+}
+
+.top-column-content h3 {
+    margin-top: -10px;
+    margin-bottom: 10px;
+    font-size: 35px;
+    cursor: default;
+}
+
+.top-column-content p {
+    margin-top: 0;
+    font-size: 20px;
+    cursor: default;
+}
+
+.top-column-content a {
+    text-decoration: none;
+    color: white;
+}
+
+/* Button */
+.button-beranda {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: row;
+}
+
+.button-beranda img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+.button-beranda button {
+    margin: 15px;
+    width: 250px;
+    height: 60px;
+    background-color: rgba(255, 255, 255, 0.158);
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    font-size: 20px;
+    color: white;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px rgba(255, 255, 255, 0.205);
+}
+
+.button-beranda button:hover {
+    background-color: gray;
+}
+
+.button-beranda p {
+    cursor: pointer;
+}
+
+/* Button 1 [Whatsapp] */
+.button-beranda button:nth-child(1) {
+    display: flex;
+    background-color: #ffffff86;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: 30px;    
+}
+.button-beranda button:nth-child(1) img {
+    margin-top: 12px;
+    padding: 0;
+    /* margin-left: 10px; */
+}
+
+.button-beranda button:nth-child(1) p {
+    margin-top: 17px;
+    /* margin-right: 25px; */
+}
+.button-beranda  button:nth-child(1):hover{
+    background-color: #00ff5ecc;
+    font-weight: 600;
+}
+
+/* Button 2 [Maps] */
+.button-beranda button:nth-child(2) {
+    display: flex;
+    background-color: #ffffff86;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: 40px;    
+}
+.button-beranda button:nth-child(2) img {
+    margin-top: 12px;
+    /* margin-left: 10px; */
+}
+.button-beranda button:nth-child(2) p {
+    margin-top: 17px;
+    /* margin-right: 85px; */
+}
+.button-beranda  button:nth-child(2):hover{
+    background-color: #00ff5ecc;
+    font-weight: 600;
+}
+
+/* Button 3 [Biaya] */
+.button-beranda button:nth-child(3) {
+    display: flex;
+    background-color: #ffffff86;
+    justify-content: space-evenly;
+    flex-direction: row;
+    font-size: 40px;    
+}
+.button-beranda button:nth-child(3) img {
+    margin-top: 6px;
+    /* margin-left: 10px; */
+}
+.button-beranda button:nth-child(3) p {
+    margin-top: 17px;
+    /* margin-right: 85px; */
+}
+.button-beranda  button:nth-child(3):hover{
+    background-color: #00ff5ecc;
+    font-weight: 600;
+}
+
+
+.bottom-column {
+    z-index: 1;
+    opacity: 0.1;
+    /* filter: blur(10px); */
+}
+/* Kolom bawah/slide-photo Beranda */
+.bottom-column {
+    position: relative;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+
+
+
+/* Jadwal */
+.jadwal {
+    background: #0b0b45;
+    height: 65vh;
+    display: flex;
+    padding-top: 120px;
+    justify-content: space-evenly;
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.jadwal-senam {
+    width: 35%;
+    text-align: center;
+}
+
+.jadwal-senam table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.jadwal-senam th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.jadwal-senam th {
+    background-color: #2020204d;
+}
+
+.jadwal-senam .day-column {
+    text-align: left;
+    width: 50%;
+}
+
+.jadwal-senam .time-column {
+    text-align: right;
+    width: 50%;
+}
+
+
+
+/* Faq */
+.faq {
+    text-align: center;
+    width: 50%;
+}
+
+.faq p {
+    font-display: center;
+}
+
+.faq .collapsible {
+    background-color: #090938;
+    color: white;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 20px;
+  }
+  
+  .active, .faq .collapsible:hover {
+    background-color: #060629;
+  }
+  
+  .faq .content {
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    background-color: #0b0b45;
+    width:92.8%;
+  }
+
+  .faq .content p {
+    font-size: 15px;
+    font-weight: 400;
+    text-align: start;
+  }
+
+
+
+
+/* Maps */
+.maps {
+    background: #0b0b45;
+    height: 70vh;
+    display: flex;
+    padding-top: 70px;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+}
+
+.maps-item p {
+    font-size: 50px;
+    font-weight: 600;
+    margin-bottom: 1px;
+}
+
+.maps-desktop p {
+    text-align: center;
+}
+
+.maps-item iframe {
+    border-radius: 20px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+
+/* Kontak */
+.kontak {
+    background: #0b0b45;
+    height: 100vh;
+    display: flex;
+    /* padding-top: -80px; */
+    width: 100vw;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.kontak h2 {
+    text-align: center;
+    margin-bottom: 5px;
+    font-size: 50px;
+}
+
+.photo-kontak img {
+    border-radius: 50%;
+    border: none;   
+}
+
+.content-kontak {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.container-kontak {
+    display: flex;
+    flex-direction: row;
+    background-color: rgba(255, 255, 255, 0.205);
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+    border-radius: 20px;
+    width: 80%;
+    height: 280px;
+    justify-content: space-evenly;
+}
+
+.photo-kontak {
+    margin-top: 60px;
+} 
+
+.detail-kontak {
+    margin-top: 40px;
+}
+
+
+.detail-kontak {
+    width: 45vw;   
+    /* backdrop-filter: blur(10px); */
+    /* z-index: 1; */
+}
+
+
+
+.tabel-kontak {
+    width: 100%;
+    margin: 10px;
+    margin-right: 20px;
+    height: 80px;
+}
+
+.detail-kontak a {
+    text-decoration: none;
+    color: white;
+}
+.detail-kontak td {
+    border-bottom: none;
+}
+
+.left-detail {
+    margin-right: 20px;
+    width: 35%;
+}
+
+.center-detail {
+    width: 3px;
+}
+
+.right-detail {
+    margin-left: 20px;
+    text-align: justify;
+}
+
+.right-detail a:hover {
+    text-decoration: underline;
+    background-color: rgba(0, 0, 0, 0.466);
+    /* border-radius: 5px; */
+}
+
+.button-wa {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    /* align-items: center; */
+    /* background-color: white; */
+}
+
+.button-wa button {
+    /* width: 50%; */
+    height: 45px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #00ff5e48;
+    border: none;
+    font-weight: 400;
+    color: white;
+    cursor: pointer;
+    /* font-size: 20px; */
+    /* top: 100px; */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+}
+
+.button-wa img {
+    margin-top: 3px;
+    margin-right: 10px;
+}
+
+.button-wa p {
+    margin-top: 8px;
+    margin-left: 10px;
+    font-size: 19px;
+    font-weight: 400;
+}
+
+.button-wa button:hover {
+    background-color: #00ff5ebd;
+}
+.button-wa button:hover p {
+    font-weight: 600;
+}
+
+
+
+
+/* footer */
+footer {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    height: 30px;
+    background-image: linear-gradient(to top,#000000,#0b0b45);
+}
+
+footer p {
+    align-items: center;
+    color: rgb(255, 255, 255);
+}
+
+footer a {
+    text-decoration: none;
+    color: white;
+}
+
+footer a:hover {
+    color: white;
+}
+
+
+
+
+/* Responsive Breakpoint */
+/* Desktop Page */
+@media (min-width: 769px) {
+    .maps-mobile {
+        display: none;
+    }
+} 
+
+/* Mobile Page */
+@media (max-width: 768px) {
+
+    body {
+        overflow: hidden;
+        width: 100%;
+    }
+
+    /* Hamburger Button & Navbar */
+    .menu-toggle {
+        display: flex;
+    }
+
+    /* Navbar Sticky - follow scroll */
+    .navbar.sticky {
+        height: 10vh;
+    }
+
+    .navbar.sticky {
+        /* background: linear-gradient(135deg rgba(255,255,255,0.1), rgba(255,255,255,0)); */
+        /* backdrop-filter: blur(25px); */
+        /* -webkit-backdrop-filter: blur(25px); */
+        background-color: #000;
+        transform: translateY(0);
+        transition: 1.5s;
+        border: 1px transparent rgba(255,255,255,0.18);
+        height: 13vh;
+    }
+
+    .navbar.sticky img {
+        padding-top: 30px;
+    }
+
+
+    /* For Hamburger Button navigation slide */
+    .navbar-menu {
+        /* blur effect start */
+        background: linear-gradient(135deg rgba(255,255,255,0.1), rgba(255,255,255,0));
+        /* background: rgba(0, 0, 0, 0.5); */
+        backdrop-filter: blur(25px);
+        -webkit-backdrop-filter: blur(25px);
+        border: 1px transparent rgba(255,255,255,0.18);
+        box-shadow: 0 0 2000px rgba(0, 0, 0, 0.5);
+        /* blue effect end */
+
+        position: fixed;
+        right: 0%;
+        top: 0;
+        width: 0%;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: 997;
+        transform: translateX(0%);
+        transition: all 0.5s;
+        opacity: 0;
+    }
+
+
+    /* hamburger transision */
+    nav ul.slide {
+        transform: translateX(0);
+        opacity: 1;
+        width: 80%;
+    }
+
+
+    /* Content */
+    /* Beranda */
+    /* .beranda {
+        margin-top: 70px;
+        height: 80vh;
+    } */
+    .top-column-content h1 {
+        padding-top: 10px;
+        font-size: 35px;
+        font-weight: 600;
+        margin-bottom: 0;
+        text-shadow: 5px 3px 30px #dddddd81;
+        cursor: default;
+        text-align: center;
+    }
+
+    .top-column-content h3 {
+        margin-top: -10px;
+        margin-bottom: 10px;
+        font-size: 20px;
+        cursor: default;
+        text-align: center;
+    }
+    
+    .top-column-content p {
+        margin-top: 0;
+        font-size: 16px;
+        cursor: default;
+        text-align: center;
+    }
+
+    .button-beranda {
+        display: flex;
+        justify-content: space-evenly;
+        flex-direction: column;
+    }
+
+
+    /* Jadwal */   
+    .jadwal {
+        margin-top: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        height: 125vh;
+        padding-top: 80px;
+    }
+
+    .jadwal-senam {
+        width: 100%;
+        text-align: center;
+    }
+
+    .jadwal-senam table {
+        width: 80%;
+        border-collapse: collapse;
+        margin: 0 auto;
+    }
+
+    .jadwal-senam th, td {
+        font-size: 15px;
+        font-weight: 300;
+    }
+
+    /* FAQ */
+    .faq {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+
+    /* Maps for Mobile */
+    .maps-desktop {
+        display: none;
+    }
+
+    .maps-mobile p {
+        /* padding-top: 25px; */
+        font-size: 30px;
+        text-align: center;
+        padding-top: 20px;
+    }
+
+    /* Kontak */
+    .kontak {
+        background: #0b0b45;
+        height: 110vh;
+        display: flex;
+        margin-top: 0;
+        width: 100vw;
+        flex-direction: column;
+        justify-content: center;
+    }
+    
+    .kontak h2 {
+        text-align: center;
+        margin-bottom: 5px;
+        font-size: 30px;
+    }
+    
+
+    .photo-kontak img {
+        border-radius: 100%;
+        border: none;   
+    }
+
+    .content-kontak {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    
+    .container-kontak {
+        display: flex;
+        flex-direction: column;
+        background-color: rgba(255, 255, 255, 0.205);
+        /* border: 1px solid rgba(255,255,255,0.18); */
+        /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37); */
+        border-radius: 0;
+        width: 100%;
+        height: 200%;
+        justify-content: space-evenly;
+        margin-top: 0;
+        align-items: center;
+    }
+
+    .detail-kontak {
+        margin-top: 10px;
+        width: 100vw;   
+        /* backdrop-filter: blur(10px); */
+        /* z-index: 1; */
+    }
+    
+    .tabel-kontak {
+        width: 100%;
+        margin: 10px;
+        margin-right: 20px;
+        height: 80px;
+    }
+    
+    .detail-kontak a {
+        text-decoration: none;
+        color: white;
+    }
+    .detail-kontak td {
+        border-bottom: none;
+    }
+    
+    .left-detail {
+        margin-right: 20px;
+        width: 35%;
+    }
+    
+    .center-detail {
+        width: 3px;
+    }
+    
+    .right-detail {
+        margin-left: 20px;
+        text-align: justify;
+    }
+    
+    .right-detail a:hover {
+        text-decoration: underline;
+        background-color: rgba(0, 0, 0, 0.466);
+        /* border-radius: 5px; */
+    }
+    
+    .button-wa {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        flex-direction: column;
+        /* align-items: center; */
+        /* background-color: white; */
+    }
+    
+    .button-wa button {
+        /* width: 50%; */
+        height: 45px;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #00ff5e48;
+        border: none;
+        font-weight: 400;
+        color: white;
+        cursor: pointer;
+        /* font-size: 20px; */
+        /* top: 100px; */
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+        border-radius: 0;
+    }
+    
+    .button-wa img {
+        margin-top: 3px;
+        margin-right: 10px;
+    }
+    
+    .button-wa p {
+        margin-top: 8px;
+        margin-left: 10px;
+        font-size: 19px;
+        font-weight: 400;
+    }
+    
+    .button-wa button:hover {
+        background-color: #00ff5ebd;
+    }
+    .button-wa button:hover p {
+        font-weight: 600;
+    }
+
+
+
+    /* Footer For Mobile */
+    footer {
+        background-image: linear-gradient(to top,#000000,#0b0b45);
+        display: flex;
+        padding: 0;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        font-size: 7px;
+        height: 10px;
+    }
+}
+
+
+
+
+/* Font */
+.poppins-light {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+  }
+
+  .poppins-regular {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  .poppins-semibold {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+  }
+
+  .poppins-light-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  .poppins-regular-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: italic;
+  }
+
+  .poppins-semibold-italic {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: italic;
+  }
