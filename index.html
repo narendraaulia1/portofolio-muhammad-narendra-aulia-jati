@@ -9,6 +9,11 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/src/font/style.css">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+
 
     <style>
         /* Reset & Base Styles */
@@ -48,6 +53,7 @@
             
         }
 
+        /* Line Indikator Scroll  */
         .line {
             position: fixed;
             top: 0;
@@ -196,7 +202,7 @@
             left: 50%;
             transform: translateX(-50%);
             color: var(--text-secondary);
-            animation: bounce 2s infinite;
+            animation: bounce 3s infinite;
         }
         
         .scroll-indicator a {
@@ -318,6 +324,15 @@
             padding: 0.5rem;
             background: rgba(255, 215, 0, 0.05);
             border-radius: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+        }
+        .skill-list img {
+            width: 12%;
+        }
+        .skill-list p {
+            width: 90%;
         }
 
         /* Projects Section */
@@ -595,7 +610,7 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
+    <nav class="nav-animation animate__animated">
         <a class="nav-item" onclick="scrollToSelection('home')">
             <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 16 16">
                 <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
@@ -636,9 +651,9 @@
     <!-- Main Content -->
     <main>
         <!-- Hero Section -->
-        <section id="home" class="hero page">
+        <section id="home" class="hero">
             <div class="hero-content">
-                <h1>Muhammad Narendra<br>Aulia Jati</h1>
+                <h1 class="animate__animated animate__pulse animate__infinite">Muhammad Narendra<br>Aulia Jati</h1>
                 <p class="subtitle">Fullstack Student</p>
                 <p class="nim">NIM: 23083000039</p>
             </div>
@@ -653,7 +668,7 @@
         </section>
 
         <!-- About Section -->
-        <section id="about" class="about page">
+        <section id="about" class="about">
             <div class="about-content">
                 <div class="about-image">
                     <img src="/src/img/2.pas-photo.png" alt="">
@@ -670,33 +685,33 @@
         </section>
 
         <!-- Skills Section -->
-        <section id="skills" class="skills page">
+        <section id="skills" class="skills">
             <div class="skills-content">
                 <h2>Technical Skills</h2>
                 <div class="skills-grid">
                     <div class="skill-category">
                         <h3>Frontend Development</h3>
                         <ul class="skill-list">
-                            <li>HTML & CSS</li>
-                            <li>JavaScript</li>
-                            <li>Bootstrap & Animate.css</li>
-                            <li>Responsive Web Design</li>
+                            <li><img src="/src/img/html-css.png" alt="HTML & CSS"><p>HTML & CSS</p></li>
+                            <li><img src="/src/img/Javascript.png" alt="JavaScript"><p>JavaScript</p></li>
+                            <li><img src="/src/img/Bootstrap.png" alt="Bootstrap & Animate.css"><p>Bootstrap & Animate.css</p></li>
+                            <li><img src="/src/img/responsive_design.png" alt="Responsive Web Design"><p>Responsive Web Design</p></li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3>Backend Development</h3>
                         <ul class="skill-list">
-                            <li>PHP</li>
-                            <li>Java</li>
-                            <li>Database Design</li>
+                            <li><img src="/src/img/php.png" alt="PHP"><p>PHP</p></li>
+                            <li><img src="/src/img/java.png" alt="Java"><p>Java</p></li>
+                            <li><img src="/src/img/database.png" alt="Database Design"><p>Database Design</p></li>
                         </ul>
                     </div>
                     <div class="skill-category">
                         <h3>Database & Tools</h3>
                         <ul class="skill-list">
-                            <li>MySQL & PostgreSQL</li>
-                            <li>Git & GitHub</li>
-                            <li>Docker</li>
+                            <li><img src="/src/img/mysql-postgresql.png" alt="MySQL & PostgreSQL"><p>MySQL & PostgreSQL</p></li>
+                            <li><img src="/src/img/git-github.png" alt="Git & GitHub"><p>Git & GitHub</p></li>
+                            <li><img src="/src/img/Docker.png" alt="Docker"><p>Docker</p></li>
                         </ul>
                     </div>
                 </div>
@@ -704,7 +719,7 @@
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="projects page">
+        <section id="projects" class="projects">
             <div class="projects-content">
                 <h2>My Projects</h2>
                 <div class="projects-grid">
@@ -713,7 +728,7 @@
                         <div class="project-image">🌐</div>
                         <div class="project-content">
                             <h3>Profi Bisnis</h3>
-                            <p>Website profil pribadi dengan tampilan modern yang menampilkan biodata, keahlian, proyek, dan informasi kontak secara ringkas dan profesional.</p>
+                            <p>Website profil bisnis dengan tampilan modern yang menampilkan biodata, informasi singkat dan informasi kontak secara ringkas dan profesional.</p>
                             <div class="tech-stack">
                                 <span class="tech-tag">HTML</span>
                                 <span class="tech-tag">CSS</span>

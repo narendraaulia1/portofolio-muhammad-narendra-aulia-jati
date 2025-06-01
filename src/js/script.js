@@ -14,6 +14,19 @@ window.onscroll = () => {
 }
 
 
+// Animasi Untuk nav responsive
+const animates = document.querySelector(".nav-animation");
+const width = window.innerWidth;
+
+if(width < 765) {
+    animates.classList.add("animate__slideInUp");
+}   else if(width < 1024) {
+    animates.classList.add("animate__slideInLeft");
+}   else {
+    animates.classList.add("animate__slideInLeft");
+}
+
+
 // Scroll Function
 function scrollToSelection(id) {
     const element = document.getElementById(id);
