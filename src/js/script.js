@@ -50,3 +50,5 @@ contactItem.forEach(item => {
     .catch(() => alert('Gagal Menyalin Text'));
 });
 });
+
+document.getElementById("year").innerHTML = new Date().getFullYear();
