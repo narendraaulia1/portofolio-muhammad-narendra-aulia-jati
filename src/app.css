@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Plus+Jakarta+Sans:wght@500;700;800&display=swap");
+
+:root {
+  --font-main: "Plus Jakarta Sans", sans-serif;
+  --font-cartoon: "Fredoka", sans-serif;
+  --ink: #18181b;
+  --orange: #ff671d;
+  --yellow: #ffd60a;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: var(--font-main);
+}
+
+html,
+body {
+  cursor: url("/cursors/Iron_Sword.cur"), auto !important;
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--orange);
+  background-image: radial-gradient(
+    rgba(24, 24, 27, 0.14) 1.5px,
+    transparent 1.5px
+  );
+  background-size: 20px 20px;
+  color: #ffffff;
+}
+
+a,
+button,
+[role="button"],
+input[type="submit"],
+label[for],
+select,
+summary {
+  cursor: url("/cursors/Iron_Sword.cur"), pointer !important;
+}
